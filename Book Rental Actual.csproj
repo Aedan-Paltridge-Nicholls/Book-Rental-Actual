@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BookRentalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookRentalDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="w.xaml.cs">
       <DependentUpon>w.xaml</DependentUpon>
     </Compile>
@@ -93,6 +98,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="BookRentalDataSet.xsc">
+      <DependentUpon>BookRentalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BookRentalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BookRentalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BookRentalDataSet.xss">
+      <DependentUpon>BookRentalDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -30,7 +30,7 @@ namespace Book_Rental_Actual
         private void MainWindow_Loaded_1(object sender, RoutedEventArgs e)
         {
              ListBooks.ItemsSource = obj.ListBooks("%").DefaultView;
-            ListCustomers.ItemsSource = obj.ListCustomers("%").DefaultView;
+             ListCustomers.ItemsSource = obj.ListCustomers("%").DefaultView;
         }
 
         private void Removebook_Click(object sender, RoutedEventArgs e)
@@ -38,7 +38,7 @@ namespace Book_Rental_Actual
 
            MessageBoxResult dialogResult = MessageBox.Show("Are you sure you Want to delete"
                 + Bookname.Text + " By " + Author.Text, "Library", MessageBoxButton.YesNo);
-            if (dialogResult.ToString() == "yes") 
+            if (dialogResult.ToString() == "Yes") 
             { 
              DataRowView Row = (DataRowView)ListBooks.SelectedItems[0];
                 String bookname = Convert.ToString(Row["BookName"]);

@@ -1,9 +1,10 @@
-﻿<Window x:Name="mainwindow"  x:Class="Book_Rental_Actual.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Book_Rental_Actual"
+        xmlns:Data="clr-namespace:System.Data;assembly=System.Data" x:Name="mainwindow"  x:Class="Book_Rental_Actual.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" BorderBrush="#FF99B4D1" WindowStyle="SingleBorderWindow" BorderThickness="1,1,1,1" Loaded="MainWindow_Loaded_1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="820" MaxHeight="470" MinHeight="470" MinWidth="820">
     <Window.FocusVisualStyle>
@@ -16,12 +17,7 @@
         <TabControl Margin="5,14,5,0" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="False" VerticalContentAlignment="Top" HorizontalContentAlignment="Left">
             <TabItem Header="Books">
                 <Grid Background="#FFE5E5E5" Height="200" VerticalAlignment="Top" Margin="5,5,5,0">
-                    <TextBox HorizontalAlignment="Left" Margin="82,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                    <DataGrid x:Name="ListBooks" d:ItemsSource="{d:SampleData ItemCount=5}" HeadersVisibility="Column">
-                        <DataGrid.ColumnHeaderStyle>
-                            <Style/>
-                        </DataGrid.ColumnHeaderStyle>
-                    </DataGrid>
+                    <DataGrid x:Name="ListBooks" d:ItemsSource="{d:SampleData ItemCount=5}" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserAddRows="False" CanUserResizeColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="Customers" Header="Customers">

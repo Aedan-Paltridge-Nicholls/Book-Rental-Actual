@@ -103,7 +103,7 @@ namespace Book_Rental_Actual
             try
             {
                 SqlSrt.Connection = SqlConn;
-                sqlStmt = "insert into Books(Bookname,Author,Availble) values('"+ bookname+"','"+author+"','Yes')";
+                sqlStmt = "insert into Books(Bookname,Author,Available) values('"+ bookname+"','"+author+"','Yes')";
                 SqlSrt.CommandText = sqlStmt;
 
                 SqlConn.Open();
@@ -140,7 +140,7 @@ namespace Book_Rental_Actual
             {
                 SqlSrt.Connection = SqlConn;
                 sqlStmt = "insert into Users(Username,Age,Fullname) " +
-                    "values('" + userName + "','" +Age + "','" + Fullname + "','Yes')";
+                    "values('" + userName + "','" +Age + "','" + Fullname + "')";
                 SqlSrt.CommandText = sqlStmt;
 
                 SqlConn.Open();
