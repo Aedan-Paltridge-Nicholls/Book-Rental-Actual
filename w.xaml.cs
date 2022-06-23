@@ -25,14 +25,60 @@ namespace Book_Rental_Actual
         {
             InitializeComponent();
         }
-        public DataTable Listbook(string Bookname)
+     
+
+        private void MainWindow_Loaded_1(object sender, RoutedEventArgs e)
         {
-            DataTable DT = new DataTable();
-            try 
-            {
+             ListBooks.ItemsSource = obj.ListBooks("%").DefaultView;
+            ListCustomers.ItemsSource = obj.ListCustomers("%").DefaultView;
+        }
+
+        private void Removebook_Click(object sender, RoutedEventArgs e)
+        {
+
+           MessageBoxResult dialogResult = MessageBox.Show("Are you sure you Want to delete"
+                + Bookname.Text + " By " + Author.Text, "Library", MessageBoxButton.YesNo);
+            if (dialogResult.ToString() == "yes") 
+            { 
+             DataRowView Row = (DataRowView)ListBooks.SelectedItems[0];
+                String bookname = Convert.ToString(Row["BookName"]);
+                obj.Deletebooks(bookname);
+                MessageBox.Show("Book Deleted");
+                ListBooks.ItemsSource = obj.ListBooks("%").DefaultView;
             
             }
         }
 
+        private void AddBook_Click(object sender, RoutedEventArgs e)
+        {
+            if (Bookname.Text != "" && Author.Text != "")
+            {
+                obj.Addbooks(Bookname.Text, Author.Text);
+            }
+        }
+
+        private void RemoveCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult dialogResult = MessageBox.Show("Are you sure you Want to delete"
+                +"User"+ Username.Text+"full name" + 
+                Fullname.Text +" age " +Age.Text, "Library", MessageBoxButton.YesNo);
+            if (dialogResult.ToString() == "yes")
+            {
+                DataRowView Row = (DataRowView)ListCustomers.SelectedItems[0];
+                String Fullname = Convert.ToString(Row["Fullname"]);
+                obj.Deletebooks(Fullname);
+                MessageBox.Show("User Deleted");
+                ListCustomers.ItemsSource = obj.ListBooks("%").DefaultView;
+
+            }
+        }
+
+        private void AddCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            if (Username.Text != "" && Age.Text != ""&& Fullname.Text != "" )
+            {
+                obj.AddCustomer(Username.Text, Fullname.Text, Age.Text);
+            }
+        }
     }
 }
