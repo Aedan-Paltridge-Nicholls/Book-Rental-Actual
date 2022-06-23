@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,21 @@ namespace Book_Rental_Actual
     /// <summary>
     /// Interaction logic for w.xaml
     /// </summary>
-    public partial class w : Window
+    public partial class MainWindow : Window
     {
-        public w()
+        databasemanager obj = new databasemanager(); 
+        public MainWindow()
         {
-           
+            InitializeComponent();
         }
+        public DataTable Listbook(string Bookname)
+        {
+            DataTable DT = new DataTable();
+            try 
+            {
+            
+            }
+        }
+
     }
 }

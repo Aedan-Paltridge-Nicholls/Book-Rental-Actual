@@ -62,8 +62,10 @@ namespace Book_Rental_Actual
                 SqlSrt.CommandText = sqlStmt;
                 SqlConn.Open();
                 SqlReader = SqlSrt.ExecuteReader();
-                if (SqlReader.HasRows) { return true; }
-                else { return false; }
+                
+                if (SqlReader.HasRows) { SqlConn.Close(); return true; }
+                else { SqlConn.Close(); return false; }
+                
             }
             catch (Exception ex)
             {
