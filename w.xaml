@@ -27,7 +27,7 @@
             </TabItem>
             <Menu/>
         </TabControl>
-        <GroupBox Header="Books" Margin="0,250,485,5" HorizontalAlignment="Right" Width="310">
+        <GroupBox Header="Books" Margin="0,250,330,5" HorizontalAlignment="Right" Width="465">
             <GroupBox.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="White" Offset="0.003"/>
@@ -45,11 +45,14 @@
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
                 </Grid.Background>
                 <Button x:Name="Removebook" Content="Remove book" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="40" Width="125" Margin="5,0,0,5" Click="Removebook_Click"/>
-                <Button x:Name="AddBook" Content="Add book " VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="40" Width="125" Margin="0,0,5,5" Click="AddBook_Click"/>
+                <Button x:Name="AddBook" Content="Add book " VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="40" Width="125" Margin="0,0,170,5" Click="AddBook_Click"/>
                 <TextBox x:Name="Author" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" RenderTransformOrigin="0.515,1.786" Height="30" Margin="94,70,0,0" FontSize="17"/>
-                <TextBox x:Name="Bookname" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Margin="0,20,14,0" Height="30" FontSize="17"/>
+                <TextBox x:Name="Bookname" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Margin="94,22,169,0" Height="30" FontSize="17"/>
                 <Label Content="Book Name" HorizontalAlignment="Left" Margin="14,22,0,0" VerticalAlignment="Top"/>
                 <Label Content="Author" HorizontalAlignment="Left" Margin="19,72,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="IsusseBook" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="40" Width="125" Margin="0,0,19,104" Click="IsusseBook_Click" Content="Isusse Book"/>
+                <Button x:Name="ReturnBook" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="40" Width="125" Margin="0,0,19,54" Click="ReturnBook_Click" Content="Return Book"/>
+                <Button x:Name="Stats_Button" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="40" Width="125" Margin="0,0,19,4" Click="Stats_Click" Content="Statisics"/>
             </Grid>
 
         </GroupBox>

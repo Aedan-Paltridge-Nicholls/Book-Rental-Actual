@@ -1,19 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Book_Rental_Actual
 {
@@ -171,6 +159,44 @@ namespace Book_Rental_Actual
                 SqlConn.Close();
             }
         }
+        public void IsusseBook(string CustomerName, string BookName )
+        {
+            try
+            {
+                SqlSrt.Connection = SqlConn;
+                sqlStmt = "Update Books set Borrower '" + CustomerName + "'" +"Available = 'NO' where BookName ='"+ BookName + "'" ;
+                   
+                SqlSrt.CommandText = sqlStmt;
+
+                SqlConn.Open();
+                SqlReader = SqlSrt.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database Exception", ex.Message);
+                SqlConn.Close();
+            }
+        }
+        public void ReturnBook( string BookName)
+        {
+            try
+            {
+                SqlSrt.Connection = SqlConn;
+                sqlStmt = "Update Books set Borrower 'NULL'" + "Available = 'Yes' where BookName ='" + BookName + "'";
+                SqlSrt.CommandText = sqlStmt;
+
+                SqlConn.Open();
+                SqlReader = SqlSrt.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database Exception", ex.Message);
+                SqlConn.Close();
+            }
+        }
+       
     }
     public partial class Login : Window
     {
